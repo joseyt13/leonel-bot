@@ -18,7 +18,7 @@ let handler = async (m, { conn, args, usedPrefix, command}) => {
 
       let img = await q.download?.()
       if (!img) {
-        return conn.reply(m.chat, '📌 Envía una imagen o video para crear un sticker...', m, rcanal)
+        return conn.reply(m.chat, '🍒 Envía una imagen o video para crear un sticker...', m, rcanal)
 }
 
       await conn.reply(m.chat, '🌙 Creando su sticker, espere...', m, rcanal)
