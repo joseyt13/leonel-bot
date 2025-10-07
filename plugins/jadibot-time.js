@@ -1,4 +1,4 @@
-// Código creado x Dev-fedexyz 
+// Código creado x Dev-fedexyz  xd
 
 import chalk from 'chalk'
 
