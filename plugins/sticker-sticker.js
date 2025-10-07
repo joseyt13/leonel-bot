@@ -1,23 +1,23 @@
-import { sticker } from '../lib/sticker.js'
+import { sticker} from '../lib/sticker.js'
 import uploadFile from '../lib/uploadFile.js'
 import uploadImage from '../lib/uploadImage.js'
-import { webp2png } from '../lib/webp2mp4.js'
+import { webp2png} from '../lib/webp2mp4.js'
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
+let handler = async (m, { conn, args, usedPrefix, command}) => {
   let stiker = false
   try {
-    let q = m.quoted ? m.quoted : m
+    let q = m.quoted? m.quoted: m
     let mime = (q.msg || q).mimetype || q.mediaType || ''
 
     if (/webp|image|video/g.test(mime)) {
-      if (/video/g.test(mime) && (q.msg || q).seconds > 15) {
-        return m.reply('🚫 The video cannot be longer than 15 seconds...')
-      }
+      if (/video/g.test(mime) && (q.msg || q).seconds> 15) {
+        return conn.reply(m.chat, '🚫 The video cannot be longer than 15 seconds...', m)
+}
 
       let img = await q.download?.()
       if (!img) {
-        return conn.reply(m.chat, '📌 Send an image or video to create a sticker...', m, rcanal)
-      }
+        return conn.reply(m.chat, '📌 Send an image or video to create a sticker...', m)
+}
 
       let out
       try {
@@ -27,29 +27,29 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         let texto2 = packstickers.text2 || global.packsticker2
 
         stiker = await sticker(img, false, texto1, texto2)
-      } finally {
+} finally {
         if (!stiker) {
           if (/webp/g.test(mime)) out = await webp2png(img)
           else if (/image/g.test(mime)) out = await uploadImage(img)
           else if (/video/g.test(mime)) out = await uploadFile(img)
-          if (typeof out !== 'string') out = await uploadImage(img)
+          if (typeof out!== 'string') out = await uploadImage(img)
           stiker = await sticker(false, out, global.packsticker, global.packsticker2)
-        }
-      }
-    } else if (args[0]) {
+}
+}
+} else if (args[0]) {
       if (isUrl(args[0])) {
         stiker = await sticker(false, args[0], global.packsticker, global.packsticker2)
-      } else {
-        return m.reply('⚠️ The URL is not valid...')
-      }
-    }
-  } finally {
+} else {
+        return conn.reply(m.chat, '⚠️ The URL is not valid...', m)
+}
+}
+} finally {
     if (stiker) {
       conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
-    } else {
-      return conn.reply(m.chat, '*Send an image or video to convert it into a sticker. Note: the video must not be longer than 15 seconds*', m, rcanal)
-    }
-  }
+} else {
+      return conn.reply(m.chat, '*Send an image or video to convert it into a sticker. Note: the video must not be longer than 15 seconds*', m)
+}
+}
 }
 
 handler.help = ['stiker <img>', 'sticker <url>']
