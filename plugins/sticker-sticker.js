@@ -5,19 +5,23 @@ import { webp2png} from '../lib/webp2mp4.js'
 
 let handler = async (m, { conn, args, usedPrefix, command}) => {
   let stiker = false
+  let rcanal = m // se define rcanal como el mensaje original
+
   try {
     let q = m.quoted? m.quoted: m
     let mime = (q.msg || q).mimetype || q.mediaType || ''
 
     if (/webp|image|video/g.test(mime)) {
       if (/video/g.test(mime) && (q.msg || q).seconds> 15) {
-        return conn.reply(m.chat, '🚫 The video cannot be longer than 15 seconds...', m)
+        return conn.reply(m.chat, '🚫 El video no puede durar más de 15 segundos...', m, rcanal)
 }
 
       let img = await q.download?.()
       if (!img) {
-        return conn.reply(m.chat, '📌 Send an image or video to create a sticker...', m)
+        return conn.reply(m.chat, '📌 Envía una imagen o video para crear un sticker...', m, rcanal)
 }
+
+      await conn.reply(m.chat, '🌙 Creando su sticker, espere...', m, rcanal)
 
       let out
       try {
@@ -38,21 +42,22 @@ let handler = async (m, { conn, args, usedPrefix, command}) => {
 }
 } else if (args[0]) {
       if (isUrl(args[0])) {
+        await conn.reply(m.chat, '🌙 Creando su sticker, espere...', m, rcanal)
         stiker = await sticker(false, args[0], global.packsticker, global.packsticker2)
 } else {
-        return conn.reply(m.chat, '⚠️ The URL is not valid...', m)
+        return conn.reply(m.chat, '⚠️ La URL no es válida...', m, rcanal)
 }
 }
 } finally {
     if (stiker) {
-      conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
+      conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, rcanal)
 } else {
-      return conn.reply(m.chat, '*Send an image or video to convert it into a sticker. Note: the video must not be longer than 15 seconds*', m)
+      return conn.reply(m.chat, '*Envía una imagen o video para convertirlo en sticker. Nota: el video no debe durar más de 15 segundos.*', m, rcanal)
 }
 }
 }
 
-handler.help = ['stiker <img>', 'sticker <url>']
+handler.help = ['stiker <imagen>', 'sticker <url>']
 handler.tags = ['sticker']
 handler.command = ['s', 'sticker', 'stiker']
 
