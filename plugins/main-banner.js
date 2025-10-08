@@ -7,14 +7,14 @@ let handler = async (m, { conn, isOwner}) => {
   const q = m.quoted || m
   const mime = (q.msg || q).mimetype || ''
   if (!mime ||!/image\/(jpe?g|png)/.test(mime)) {
-    return conn.reply(m.chat, '❀ Por favor, responde a una imagen (.jpg o.png) para establecer como banner.', m)
+    return conn.reply(m.chat, '❀ Responde a una imagen (.jpg o.png) para establecer como nuevo banner.', m)
 }
 
   const buffer = await q.download()
   const bannerPath = path.join(process.cwd(), './media/banner.jpg')
 
   fs.writeFileSync(bannerPath, buffer)
-  conn.reply(m.chat, '✅ Banner actualizado correctamente.', m)
+  conn.reply(m.chat, '✅ Banner actualizado correctamente. El menú ahora usará esta imagen.', m)
 }
 
 handler.help = ['setbanner']
