@@ -48,8 +48,8 @@ global.nagiJadibts = true
 
 //-------------------------------------------------------------
 
-global.packname = 'Nagi-BotV1'
-global.author = 'Dev-fedexyz • Instagram: @dev-fedexyz13'
+global.packname = 'NᴀɢɪBᴏᴛV𝟷  |'
+global.author = 'Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ • ig: @dev-fedexyz13'
 
 //-------------------------------------------------------------
 
