@@ -1,40 +1,53 @@
+Aquí tienes una versión bien estructurada y traducida al inglés, con los íconos de contacto al final (WhatsApp, correo e Instagram), y manteniendo el estilo visual que pediste:
+
+---
+
 > [!IMPORTANT]
-> **Este bot se encuentra en desarrollo,  Únete a nuestrl canal para más novedades. [¡Canal Oficial!](https)**
+> *This bot is currently under development. Join our channel for updates and news. [Official Channel!](https)*
 
-<p align="center"> 
+<p align="center">
 <img src="https://cdn.yupra.my.id/yp/dpi4ktu8.jpg" alt="GataBot-MD" style="width: 75%; height: auto; max-width: 100px;">
-
-<p align="center"> 
-<a href="#"><img title="Nagi-BotV1" src="https://img.shields.io/badge/¡Un bot fácil de editar, Y dusfruta de nuestro bot xd! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a> 
 </p>
+<p align="center">
+  <a href="https://wa.me/5491156178758">
+    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" width="30" alt="WhatsApp"> WhatsApp
+  </a> |
+  <a href="mailto:devfedexyz@gmail.com">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="30" alt="Email"> Email
+  </a> |
+  <a href="https://instagram.com/devfedexyz">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="30" alt="Instagram"> Instagram
+  </a>
+</p>
+
+</div>
+
+---
+
+<p align="center">
+<a href="#"><img title="Nagi-BotV1" src="https://img.shields.io/badge/A bot that's easy to edit – Enjoy our bot! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a>
+</p>
+
+---
+
 <div align="center">
-  
----
 
-## 𝑴𝒐𝒐𝒏𝒇𝒓𝒂𝒓𝒆 𝑻𝒆𝒂𝒎
+*𝑴𝒐𝒐𝒏𝒇𝒓𝒂𝒓𝒆 𝑻𝒆𝒂𝒎*
 
-> ⚽ **links oficiales de Nagi** 
+> ⚽ *Official Nagi Links*
 
+*ꕥ Links!*
+TypeLinkChannel[Join here](https://chat.whatsapp.com/LTOMyo9JqQEGYpSHm2hVT7)Group[Join here](https://chat.whatsapp.com/LTOMyo9JqQEGYpSHm2hVT7)Group 2[Join here](https://whatsapp.com/channel/0029Vb6EMjb6GcGKmVITlG2p)---
 
-### ꕥ **Enlaces!**
+*❕ Important Information*
 
-| Tipos      | Links                                                                 |
-|--------------|------------------------------------------------------------------------|
-| Canal       | [Aquí](https://chat.whatsapp.com/LTOMyo9JqQEGYpSHm2hVT7)                         |
-|  Grupo     | [Aquí](https://chat.whatsapp.com/LTOMyo9JqQEGYpSHm2hVT7)             |
-|  Grupo2     | [Aquí](https://whatsapp.com/channel/0029Vb6EMjb6GcGKmVITlG2p)             |
+This project is *not affiliated in any way* with `WhatsApp Inc.`
+`WhatsApp` is a registered trademark of `WhatsApp LLC`.
+This bot is an *independent development* with no official connection to the company.
 
 ---
 
-### ❕ Información importante
-
-Este proyecto **no está afiliado de ninguna manera** con `WhatsApp Inc.`.
-`WhatsApp` es una marca registrada de `WhatsApp LLC`.
-Este bot es un **desarrollo independiente** sin relación oficial con la compañía.
-
----
-
-**👑 Propietario**
+*👑 Owner*
 
 <p align="center">
   <a href="https://github.com/Dev-fedexyz17">
