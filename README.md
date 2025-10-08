@@ -1,6 +1,3 @@
-Aquí tienes una versión bien estructurada y traducida al inglés, con los íconos de contacto al final (WhatsApp, correo e Instagram), y manteniendo el estilo visual que pediste:
-
----
 
 > [!IMPORTANT]
 > *This bot is currently under development. Join our channel for updates and news. [Official Channel!](https)*
