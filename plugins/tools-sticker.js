@@ -41,23 +41,10 @@ let handler = async (m, { conn, args}) => {
 
 } catch (e) {
     await conn.reply(m.chat, '⚠︎ Ocurrió un Error: ' + e.message, m)
-    await m.react('✖️')
 
 } finally {
     if (stiker) {
-      await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, {
-        contextInfo: {
-          externalAdReply: {
-            title: 'ＮＡＧＩＢＯＴ－Ｖ¹',
-            body: '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ',
-            thumbnailUrl: 'https://cdn.yupra.my.id/yp/7nmr62hj.jpg',
-            sourceUrl: 'https://github.com/Dev-fedexyz17',
-            mediaType: 1,
-            renderLargerThumbnail: true
-}
-}
-})
-      await m.react('✅')
+      conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
 }
 }
 }
