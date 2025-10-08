@@ -12,7 +12,6 @@
 </p>
 
 ---
-[!channel]
 *𝑴𝒐𝒐𝒏𝒇𝒓𝒂𝒓𝒆 𝑻𝒆𝒂𝒎*
 
 > ⚽ *Enlaces oficiales de Nagi*
