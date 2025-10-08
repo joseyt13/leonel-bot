@@ -11,7 +11,7 @@ let handler = async (m, { conn, args}) => {
   if (!global.packsticker) global.packsticker = 'ＮＡＧＩＢＯＴ－Ｖ¹'
   if (!global.packsticker2) global.packsticker2 = '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ'
 
-  let texto1 = packstickers.text1 || global.packsticker
+  let texto1 = 'dev'
   let texto2 = packstickers.text2 || global.packsticker2
 
   try {
