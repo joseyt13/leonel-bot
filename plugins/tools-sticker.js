@@ -5,19 +5,12 @@ import { webp2png} from '../lib/webp2mp4.js'
 
 let handler = async (m, { conn, args}) => {
   let stiker = false
-  let userId = m.sender
-  let packstickers = global.db.data.users[userId] || {}
-
-  if (!global.packsticker) global.packsticker = 'ＮＡＧＩＢＯＴ－Ｖ¹'
-  if (!global.packsticker2) global.packsticker2 = '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ'
-
-  let texto1 = '⚽'
-  let texto2 = packstickers.text2 || global.packsticker2
 
   try {
     let q = m.quoted? m.quoted: m
     let mime = (q.msg || q).mimetype || q.mediaType || ''
     let txt = args.join(' ')
+    let marca = txt? txt.split(/[\u2022|]/).map(part => part.trim()): [global.packname, global.author]
 
     if (/webp|image|video/g.test(mime) && q.download) {
       if (/video/.test(mime) && (q.msg || q).seconds> 16)
@@ -26,13 +19,12 @@ let handler = async (m, { conn, args}) => {
       await conn.reply(m.chat, '❀ *_Creando su sticker, espere..._*', m)
 
       let buffer = await q.download()
-      let marca = txt? txt.split(/[\u2022|]/).map(part => part.trim()): [texto1, texto2]
       stiker = await sticker(buffer, false, marca[0], marca[1])
 
 } else if (args[0] && isUrl(args[0])) {
       await conn.reply(m.chat, '❀ *_Creando su sticker, espere..._*', m)
 
-      let buffer = await sticker(false, args[0], texto1, texto2)
+      let buffer = await sticker(false, args[0], global.packname, global.author)
       stiker = buffer
 
 } else {
