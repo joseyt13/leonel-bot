@@ -5,7 +5,7 @@
 <img src="https://cdn.yupra.my.id/yp/dpi4ktu8.jpg" alt="GataBot-MD" style="width: 75%; height: auto; max-width: 100px;">
 
 <p align="center"> 
-<a href="#"><img title="Nagi-BotV1" src="https://img.shields.io/badge/¡Disfruta de un Bot totalmente gratuito, con múltiples funciones y de código abierto! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a> 
+<a href="#"><img title="Nagi-BotV1" src="https://img.shields.io/badge/¡Un bot fácil de editar, Y dusfruta de nuevo bot xd! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a> 
 </p>
 <div align="center">
   
