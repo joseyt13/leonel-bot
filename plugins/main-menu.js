@@ -5,7 +5,7 @@ let handler = async (m, { conn}) => {
   const banner = 'https://cdn.yupra.my.id/yp/dpi4ktu8.jpg'
   const channelRD = {
     id: '120363423335018677@newsletter',
-    name: '𝑵𝒂𝒈𝒊-𝑩𝒐𝒕𝑽𝟏'
+    name: '⏤͟͟͞͞☆ 𝑵𝒂𝒈𝒊 - 𝑩𝒐𝒕𝑽𝟏 ✿'
 }
 
   const creadorJid = global.owner?.[0]?.[0] + '@s.whatsapp.net'
