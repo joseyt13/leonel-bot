@@ -23,34 +23,14 @@ let handler = async (m, { conn, args}) => {
       if (/video/.test(mime) && (q.msg || q).seconds> 16)
         return conn.reply(m.chat, '✧ El video no puede durar más de *15 segundos*', m)
 
-      await conn.sendMessage(m.chat, {
-        text: '❀ *_Creando su sticker, espere..._*',
-        contextInfo: {
-          externalAdReply: {
-            title: 'ＮＡＧＩＢＯＴ－Ｖ¹',
-            body: '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ',
-            mediaType: 1,
-            renderLargerThumbnail: true
-}
-}
-})
+      await conn.reply(m.chat, '❀ *_Creando su sticker, espere..._*', m)
 
       let buffer = await q.download()
       let marca = txt? txt.split(/[\u2022|]/).map(part => part.trim()): [texto1, texto2]
       stiker = await sticker(buffer, false, marca[0], marca[1])
 
 } else if (args[0] && isUrl(args[0])) {
-      await conn.sendMessage(m.chat, {
-        text: '❀ *_Creando su sticker, espere..._*',
-        contextInfo: {
-          externalAdReply: {
-            title: 'ＮＡＧＩＢＯＴ－Ｖ¹',
-            body: '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ',
-            mediaType: 1,
-            renderLargerThumbnail: true
-}
-}
-})
+      await conn.reply(m.chat, '❀ *_Creando su sticker, espere..._*', m)
 
       let buffer = await sticker(false, args[0], texto1, texto2)
       stiker = buffer
@@ -65,7 +45,17 @@ let handler = async (m, { conn, args}) => {
 
 } finally {
     if (stiker) {
-      conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
+      await conn.sendMessage(m.chat, {
+        sticker: { url: stiker},
+        contextInfo: {
+          externalAdReply: {
+            title: 'ＮＡＧＩＢＯＴ－Ｖ¹',
+            body: '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ',
+            mediaType: 1,
+            renderLargerThumbnail: true
+}
+}
+}, { quoted: m})
       await m.react('✅')
 }
 }
