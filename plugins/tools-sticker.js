@@ -3,66 +3,58 @@ import uploadFile from '../lib/uploadFile.js'
 import uploadImage from '../lib/uploadImage.js'
 import { webp2png} from '../lib/webp2mp4.js'
 
-let handler = async (m, { conn, args, usedPrefix, command}) => {
+let handler = async (m, { conn, args}) => {
   let stiker = false
-  let rcanal = m
-  
+  let userId = m.sender
+  let packstickers = global.db.data.users[userId] || {}
+
+  if (!global.packsticker) global.packsticker = 'ＮＡＧＩＢＯＴ－Ｖ¹'
+  if (!global.packsticker2) global.packsticker2 = '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ'
+
+  let texto1 = packstickers.text1 || global.packsticker
+  let texto2 = packstickers.text2 || global.packsticker2
+
   try {
     let q = m.quoted? m.quoted: m
     let mime = (q.msg || q).mimetype || q.mediaType || ''
+    let txt = args.join(' ')
 
-    if (/webp|image|video/g.test(mime)) {
-      if (/video/g.test(mime) && (q.msg || q).seconds> 15) {
-        return conn.reply(m.chat, '🚫 El video no puede durar más de 15 segundos...', m, rcanal)
-}
+    if (/webp|image|video/g.test(mime) && q.download) {
+      if (/video/.test(mime) && (q.msg || q).seconds> 16)
+        return conn.reply(m.chat, '✧ El video no puede durar más de *15 segundos*', m)
 
-      let img = await q.download?.()
-      if (!img) {
-        return conn.reply(m.chat, '🍒 Envía una imagen o video para crear un sticker...', m, rcanal)
-}
+      let buffer = await q.download()
+      await m.react('🕓')
 
-      await conn.reply(m.chat, '*_Creando su sticker, espere..._*', m, rcanal)
+      let marca = txt? txt.split(/[\u2022|]/).map(part => part.trim()): [texto1, texto2]
+      stiker = await sticker(buffer, false, marca[0], marca[1])
 
-      let out
-      try {
-        let userId = m.sender
-        let packstickers = global.db.data.users[userId] || {}
-        let texto1 = packstickers.text1 || global.packsticker
-        let texto2 = packstickers.text2 || global.packsticker2
+} else if (args[0] && isUrl(args[0])) {
+      let buffer = await sticker(false, args[0], texto1, texto2)
+      stiker = buffer
 
-        stiker = await sticker(img, false, texto1, texto2)
-} finally {
-        if (!stiker) {
-          if (/webp/g.test(mime)) out = await webp2png(img)
-          else if (/image/g.test(mime)) out = await uploadImage(img)
-          else if (/video/g.test(mime)) out = await uploadFile(img)
-          if (typeof out!== 'string') out = await uploadImage(img)
-          stiker = await sticker(false, out, global.packsticker, global.packsticker2)
-}
-}
-} else if (args[0]) {
-      if (isUrl(args[0])) {
-        await conn.reply(m.chat, '🌙 Creando su sticker, espere...', m, rcanal)
-        stiker = await sticker(false, args[0], global.packsticker, global.packsticker2)
 } else {
-        return conn.reply(m.chat, '⚠️ La URL no es válida...', m, rcanal)
+      return conn.reply(m.chat, '❀ Por favor, envía una *imagen* o *video* para hacer un sticker.', m)
 }
-}
+
+} catch (e) {
+    await conn.reply(m.chat, '⚠︎ Ocurrió un Error: ' + e.message, m)
+    await m.react('✖️')
+
 } finally {
     if (stiker) {
-      conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, rcanal)
-} else {
-      return conn.reply(m.chat, '*Envía una imagen o video para convertirlo en sticker. Nota: el video no debe durar más de 15 segundos.*', m, rcanal)
+      conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
+      await m.react('✅')
 }
 }
 }
 
-handler.help = ['stiker <imagen>', 'sticker <url>']
+handler.help = ['sticker']
 handler.tags = ['sticker']
-handler.command = ['s', 'sticker', 'stiker']
+handler.command = ['s', 'sticker']
 
 export default handler
 
 const isUrl = (text) => {
-  return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi'))
-          }
+  return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)(jpe?g|gif|png)/, 'gi'))
+}
