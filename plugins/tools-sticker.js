@@ -45,17 +45,18 @@ let handler = async (m, { conn, args}) => {
 
 } finally {
     if (stiker) {
-      await conn.sendMessage(m.chat, {
-        sticker: { url: stiker},
+      await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, {
         contextInfo: {
           externalAdReply: {
             title: 'ＮＡＧＩＢＯＴ－Ｖ¹',
             body: '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ',
+            thumbnailUrl: 'https://cdn.yupra.my.id/yp/7nmr62hj.jpg',
+            sourceUrl: 'https://github.com/Dev-fedexyz17',
             mediaType: 1,
             renderLargerThumbnail: true
 }
 }
-}, { quoted: m})
+})
       await m.react('✅')
 }
 }
