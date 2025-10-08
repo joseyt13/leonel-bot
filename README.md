@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> _Este bot se encuentra actualmente en desarrollo. Únete a nuestro canal para recibir novedades y actualizaciones. [¡Canal Oficial!](https)_
+> _Este bot se encuentra actualmente en desarrollo. Únete a nuestro canal para recibir novedades y actualizaciones. [¡Canal Oficial!](https://whatsapp.com/channel/0029Vb6EMjb6GcGKmVITlG2p)_
 
 <p align="center">
   <img src="https://cdn.yupra.my.id/yp/dpi4ktu8.jpg" alt="Nagi-BotV1" style="width: 75%; height: auto; max-width: 100px;">
