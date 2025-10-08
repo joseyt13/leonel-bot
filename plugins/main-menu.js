@@ -10,18 +10,17 @@ let handler = async (m, { conn}) => {
     name: 'ＮＡＧＩＢＯＴ－Ｖ¹'
 }
 
-  const namecreador = '5491156178758@s.whatsapp.net'
+  const creadorJid = global.owner?.[0]?.[0] + '@s.whatsapp.net'
 
   const txt = `︶•︶°︶•︶°︶•︶°︶•︶°︶•︶°︶
 > ʜᴏʟᴀ, @${m.sender.split('@')[0]}, ꜱᴏʏ ɴᴀɢɪ-ʙᴏᴛ, ʟɪꜱᴛᴏ ᴘᴀʀᴀ ᴀʏᴜᴅᴀʀᴛᴇ
 ╭┈ ↷
-│ ✐ *𝓓𝓮𝔀𝓮𝓵𝓸𝓹𝓮𝓭 𝓫𝔂*  @${namecreador.split('@')[0]} ❤️
-│ ✐ ꒷ꕤ💎ദ *ɢʀᴜᴘᴏ ᴏꜰɪᴄɪᴀʟ* ꕥ
+│ ✐ 𝓓𝓮𝔀𝓮𝓵𝓸𝓹𝓮𝓭 𝓫𝔂  @${creadorJid.split('@')[0]} ❤️
+│ ✐ ꒷ꕤ💎ദ ɢʀᴜᴘᴏ ᴏꜰɪᴄɪᴀʟ ꕥ
 │ chat.whatsapp.com/F1A3vMyQLnh0LAnJvpdjng
-│ ✐ ꒷ꕤ💎ദ *ᴄᴀɴᴀʟ ᴏғɪᴄɪᴀʟ* ෴
+│ ✐ ꒷ꕤ💎ദ ᴄᴀɴᴀʟ ᴏғɪᴄɪᴀʟ ෴
 │ whatsapp.com/channel/0029VbApe6jG8l5Nv43dsC2N
 ╰─────────────────
-
 > *_ꜱɪ ᴇɴᴄᴜᴇɴᴛʀᴀꜱ ᴀʟɢᴜ́ɴ ᴇʀʀᴏʀ, ᴘᴏʀ ꜰᴀᴠᴏʀ ᴄᴏɴᴛᴀᴄᴛᴀ ᴀʟ ᴏᴡɴᴇʀ._*
 
 »  ⊹ ˚୨ •(=^●ω●^=)•  INFO ⊹
