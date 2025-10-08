@@ -31,8 +31,13 @@
 
 > ⚽ *Enlaces oficiales de Nagi*
 
-*ꕥ Accesos rápidos*
-TipoEnlaceCanal[Unirse aquí](https://chat.whatsapp.com/LTOMyo9JqQEGYpSHm2hVT7)Grupo[Unirse aquí](https://chat.whatsapp.com/LTOMyo9JqQEGYpSHm2hVT7)Grupo 2[Unirse aquí](https://whatsapp.com/channel/0029Vb6EMjb6GcGKmVITlG2p)
+### ꕥ Accesos rápidos
+
+| Tipo     | Enlace                                                                 |
+|----------|------------------------------------------------------------------------|
+| Canal    | [Unirse aquí](https://chat.whatsapp.com/LTOMyo9JqQEGYpSHm2hVT7)        |
+| Grupo    | [Unirse aquí](https://chat.whatsapp.com/LTOMyo9JqQEGYpSHm2hVT7)        |
+| Grupo 2  | [Unirse aquí](https://whatsapp.com/channel/0029Vb6EMjb6GcGKmVITlG2p)   |
 
 *❕ Información importante*
 
