@@ -23,8 +23,7 @@ let handler = async (m, { conn, args}) => {
       if (/video/.test(mime) && (q.msg || q).seconds> 16)
         return conn.reply(m.chat, '✧ El video no puede durar más de *15 segundos*', m)
 
-      await conn.reply(m.chat, '❀ Creando su sticker, espere...', m)
-      await m.react('🕓')
+      await conn.reply(m.chat, 'ꕥ Creando su sticker, espere...', m)
 
       let buffer = await q.download()
       let marca = txt? txt.split(/[\u2022|]/).map(part => part.trim()): [texto1, texto2]
