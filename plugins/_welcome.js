@@ -1,38 +1,80 @@
-import fetch from 'node-fetch'
+import fs from 'fs'
+import { WAMessageStubType} from '@whiskeysockets/baileys'
 
-const handler = async (event, { conn}) => {
-  const { participants, action, id} = event
-  if (action!== 'add') return
+const fallbackImage = 'https://cdn.yupra.my.id/yp/dpi4ktu8.jpg'
 
-  for (const user of participants) {
-    try {
-      const username = user.split('@')[0]
-      const groupMetadata = await conn.groupMetadata(id)
-      const groupName = groupMetadata.subject
-      const memberCount = groupMetadata.participants.length
-      const avatar = 'https://i.ibb.co/1s8T3sY/48f7ce63c7aa.jpg'
-      const background = 'https://cdn.yupra.my.id/yp/dpi4ktu8.jpg'
-      const guildIcon = 'https://github.com/Neveloopp.png'
-      const apiKey = 'Dev-fedexyz'
+async function generarBienvenida({ conn, userId, groupMetadata}) {
+  const username = `@${userId.split('@')[0]}`
+  let pp
+  try {
+    pp = await conn.profilePictureUrl(userId, 'image')
+} catch {
+    pp = fallbackImage
+}
 
-      const apiUrl = `https://api-nv.eliasaryt.pro/api/generate/welcome-image?username=${encodeURIComponent(username)}&guildName=${encodeURIComponent(groupName)}&memberCount=${memberCount}&avatar=${encodeURIComponent(avatar)}&background=${encodeURIComponent(background)}&guildIcon=${encodeURIComponent(guildIcon)}&key=${apiKey}`
-
-      const res = await fetch(apiUrl)
-      if (!res.ok) throw new Error('No se pudo generar la imagen de bienvenida.')
-      const buffer = await res.buffer()
-
-      const caption = `👋 ʜᴏʟᴀ @${username}\n✨ ʙɪᴇɴᴠᴇɴɪᴅᴏ ᴀʟ ɢʀᴜᴘᴏ *${groupName}* ✨\nꜱᴏʏ ɴᴀɢɪ-ʙᴏᴛ, ᴇꜱᴛᴏʏ ᴀQᴜɪ́ ᴘᴀʀᴀ ᴀʏᴜᴅᴀʀᴛᴇ 💎`
-
-      await conn.sendMessage(id, {
-        image: buffer,
-        caption,
-        mentions: [user]
+  const fecha = new Date().toLocaleDateString("es-ES", {
+    timeZone: "America/Mexico_City",
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
 })
 
-} catch (error) {
-      console.error(`Error en welcome.js: ${error.message}`)
+  const groupSize = groupMetadata.participants.length + 1
+  const caption = `❀ Bienvenido a *"_${groupMetadata.subject}_"*\n✰ _Usuario_ » ${username}\nꕥ _Ahora somos ${groupSize} Miembros._\nꕥ Fecha » ${fecha}\n૮꒰ ˶• ᴗ •˶꒱ა Disfruta tu estadía en el grupo!\n> *➮ Usa _#help_ para ver los comandos disponibles.*`
+
+  return { pp, caption, mentions: [userId]}
 }
+
+async function generarDespedida({ conn, userId, groupMetadata}) {
+  const username = `@${userId.split('@')[0]}`
+  let pp
+  try {
+    pp = await conn.profilePictureUrl(userId, 'image')
+} catch {
+    pp = fallbackImage
+}
+
+  const fecha = new Date().toLocaleDateString("es-ES", {
+    timeZone: "America/Mexico_City",
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+})
+
+  const groupSize = groupMetadata.participants.length - 1
+  const caption = `❀ Adiós de *"_${groupMetadata.subject}_"*\n✰ _Usuario_ » ${username}\nꕥ _Ahora somos ${groupSize} Miembros._\nꕥ Fecha » ${fecha}\n(˶˃⤙˂˶) Te esperamos pronto!\n> *➮ Usa _#help_ para ver los comandos disponibles.*`
+
+  return { pp, caption, mentions: [userId]}
+}
+
+let handler = m => m
+handler.before = async function (m, { conn, groupMetadata}) {
+  if (!m.messageStubType ||!m.isGroup) return!0
+
+  const chat = global.db.data.chats[m.chat]
+  const userId = m.messageStubParameters[0]
+
+  if (chat.welcome && m.messageStubType == WAMessageStubType.GROUP_PARTICIPANT_ADD) {
+    const { pp, caption, mentions} = await generarBienvenida({ conn, userId, groupMetadata})
+    await conn.sendMessage(m.chat, {
+      image: { url: pp},
+      caption,
+      contextInfo: { mentionedJid: mentions}
+}, { quoted: null})
+}
+
+  if (chat.welcome && (
+    m.messageStubType == WAMessageStubType.GROUP_PARTICIPANT_REMOVE ||
+    m.messageStubType == WAMessageStubType.GROUP_PARTICIPANT_LEAVE
+)) {
+    const { pp, caption, mentions} = await generarDespedida({ conn, userId, groupMetadata})
+    await conn.sendMessage(m.chat, {
+      image: { url: pp},
+      caption,
+      contextInfo: { mentionedJid: mentions}
+}, { quoted: null})
 }
 }
 
+export { generarBienvenida, generarDespedida}
 export default handler
