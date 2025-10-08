@@ -1,13 +1,15 @@
-## ꕥ **𝑽𝒆𝒓𝒔𝒊𝒐𝒏: 𝟐.𝟐.𝟎**
+> [!IMPORTANT]
+> **Este bot se encuentra en desarrollo,  Únete a nuestrl canal para más novedades. [¡Canal Oficial!](https)**
 
-<h1 align="center">⚽ NᴀɢɪBᴏᴛV𝟷 ꕥ</h1>
+<p align="center"> 
+<img src="https://cdn.yupra.my.id/yp/dpi4ktu8.jpg" alt="GataBot-MD" style="width: 75%; height: auto; max-width: 100px;">
 
-<p align="center">
-  <img src="https://cdn.yupra.my.id/yp/dpi4ktu8.jpg" alt="Kaoruko Banner" width="300%">
+<p align="center"> 
+<a href="#"><img title="Nagi-BotV1" src="https://img.shields.io/badge/¡Disfruta de un Bot totalmente gratuito, con múltiples funciones y de código abierto! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a> 
 </p>
-
---- 
-
+<div align="center">
+  
+---
 
 ## 𝑴𝒐𝒐𝒏𝒇𝒓𝒂𝒓𝒆 𝑻𝒆𝒂𝒎
 
