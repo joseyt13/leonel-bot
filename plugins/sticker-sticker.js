@@ -2,67 +2,116 @@ import { sticker} from '../lib/sticker.js'
 import uploadFile from '../lib/uploadFile.js'
 import uploadImage from '../lib/uploadImage.js'
 import { webp2png} from '../lib/webp2mp4.js'
+import fs from 'fs'
+import path from 'path'
 
-let handler = async (m, { conn, args, usedPrefix, command}) => {
-  let stiker = false
-  let rcanal = m
-  
+let handler = async (m, { conn, args}) => {
+  let stiker = null
   try {
-    let q = m.quoted? m.quoted: m
-    let mime = (q.msg || q).mimetype || q.mediaType || ''
+    const q = m.quoted? m.quoted: m
+    const mime = (q.msg || q).mimetype || q.mediaType || ''
 
     if (/webp|image|video/g.test(mime)) {
-      if (/video/g.test(mime) && (q.msg || q).seconds> 15) {
-        return conn.reply(m.chat, '🚫 El video no puede durar más de 15 segundos...', m, rcanal)
+      if (/video/.test(mime) && ((q.msg || q).seconds> 8)) {
+        return m.reply('⚠️ *El video no puede durar más de 8 segundos.*')
 }
 
-      let img = await q.download?.()
-      if (!img) {
-        return conn.reply(m.chat, '🍒 Envía una imagen o video para crear un sticker...', m, rcanal)
-}
+      await m.reply('🌙 *Creando su sticker, espere...*')
 
-      await conn.reply(m.chat, '🌙 Creando su sticker, espere...', m, rcanal)
+      const media = await q.download()
+      if (!media) return m.reply('❌ *No se pudo descargar el archivo. Asegúrate de responder a una imagen/video o gif.*')
 
-      let out
       try {
-        let userId = m.sender
-        let packstickers = global.db.data.users[userId] || {}
-        let texto1 = packstickers.text1 || global.packsticker
-        let texto2 = packstickers.text2 || global.packsticker2
+        stiker = await sticker(
+          media,
+          false,
+          global.packsticker || 'ＮＡＧＩＢＯＴ－Ｖ¹ ⚽',
+          global.author || '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ'
+)
+} catch (e) {
+        let out
+        if (/webp/.test(mime)) out = await webp2png(media)
+        else if (/image/.test(mime)) out = await uploadImage(media)
+        else if (/video/.test(mime)) out = await uploadFile(media)
+        if (typeof out!== 'string') out = await uploadImage(media)
 
-        stiker = await sticker(img, false, texto1, texto2)
-} finally {
-        if (!stiker) {
-          if (/webp/g.test(mime)) out = await webp2png(img)
-          else if (/image/g.test(mime)) out = await uploadImage(img)
-          else if (/video/g.test(mime)) out = await uploadFile(img)
-          if (typeof out!== 'string') out = await uploadImage(img)
-          stiker = await sticker(false, out, global.packsticker, global.packsticker2)
+        stiker = await sticker(
+          false,
+          out,
+          global.packsticker || 'ＮＡＧＩＢＯＴ－Ｖ¹ ⚽',
+          global.author || '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ'
+)
 }
-}
+
 } else if (args[0]) {
       if (isUrl(args[0])) {
-        await conn.reply(m.chat, '🌙 Creando su sticker, espere...', m, rcanal)
-        stiker = await sticker(false, args[0], global.packsticker, global.packsticker2)
+        await m.reply('🌙 *Creando su sticker, espere...*')
+        stiker = await sticker(
+          false,
+          args[0],
+          global.packsticker || 'Nagi-BotV1 ⚽',
+          global.author || 'Dev • Dev-fedexyz 🌙'
+)
 } else {
-        return conn.reply(m.chat, '⚠️ La URL no es válida...', m, rcanal)
+        return m.reply('📛 *El enlace proporcionado no es válido.*')
 }
-}
-} finally {
-    if (stiker) {
-      conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, rcanal)
 } else {
-      return conn.reply(m.chat, '*Envía una imagen o video para convertirlo en sticker. Nota: el video no debe durar más de 15 segundos.*', m, rcanal)
+      return m.reply('⚽ *Envía o responde a una imagen/video/gif (máx 8s) o proporciona un enlace válido.*')
+}
+
+} catch (e) {
+    console.error('❌ Error al crear el sticker:', e)
+    return m.reply('⚠️ *Ocurrió un error inesperado al intentar crear el sticker.*')
+}
+
+  if (stiker) {
+    try {
+      const imgPath = path.join('./src/catalogo.jpg')
+      let contextInfo = {}
+
+      if (fs.existsSync(imgPath)) {
+        contextInfo = {
+          externalAdReply: {
+            title: 'ＮＡＧＩＢＯＴ－Ｖ¹ ⚽',
+            body: '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ',
+            mediaType: 2,
+            thumbnail: fs.readFileSync(imgPath)
 }
 }
 }
 
-handler.help = ['stiker <imagen>', 'sticker <url>']
+      if (Buffer.isBuffer(stiker)) {
+        await conn.sendMessage(
+          m.chat,
+          { sticker: stiker, contextInfo},
+          { quoted: m}
+)
+} else if (typeof stiker === 'string') {
+        await conn.sendMessage(
+          m.chat,
+          { sticker: { url: stiker}, contextInfo},
+          { quoted: m}
+)
+} else {
+        throw new Error('Formato de sticker no válido')
+}
+} catch (e) {
+      console.error('⚠️ Error al enviar el sticker:', e)
+      return m.reply('❌ *No se pudo enviar el sticker. Intenta con otro archivo.*')
+}
+} else {
+    return m.reply('❌ *No se pudo crear el sticker. Intenta con otro archivo o revisa que el formato sea válido.*')
+}
+}
+
+handler.help = ['sticker', 'stiker', 's'].map(v => v + ' <imagen|video|url>')
 handler.tags = ['sticker']
 handler.command = ['s', 'sticker', 'stiker']
+handler.group = false
+handler.register = true
 
 export default handler
 
-const isUrl = (text) => {
-  return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi'))
+function isUrl(text) {
+  return /^https?:\/\/.*\.(jpe?g|gif|png|webp)$/i.test(text)
 }
