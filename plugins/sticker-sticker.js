@@ -49,8 +49,8 @@ let handler = async (m, { conn, args}) => {
         stiker = await sticker(
           false,
           args[0],
-          global.packsticker || 'Nagi-BotV1 ⚽',
-          global.author || 'Dev • Dev-fedexyz 🌙'
+          global.packsticker || 'ＮＡＧＩＢＯＴ－Ｖ¹ ⚽',
+          global.author || '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ'
 )
 } else {
         return m.reply('📛 *El enlace proporcionado no es válido.*')
@@ -104,7 +104,7 @@ let handler = async (m, { conn, args}) => {
 }
 }
 
-handler.help = ['sticker', 'stiker', 's'],
+handler.help = ['sticker', 'stiker', 's'].map(v => v + ' <imagen|video|url>')
 handler.tags = ['sticker']
 handler.command = ['s', 'sticker', 'stiker']
 handler.group = false
