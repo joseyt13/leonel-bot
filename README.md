@@ -2,18 +2,18 @@
 > _Este bot se encuentra actualmente en desarrollo. Únete a nuestro canal para recibir novedades y actualizaciones. [¡Canal Oficial!](https)_
 
 <p align="center">
-  <img src="https://cdn.yupra.my.id/yp/dpi4ktu8.jpg" alt="GataBot-MD" style="width: 75%; height: auto; max-width: 100px;">
+  <img src="https://cdn.yupra.my.id/yp/dpi4ktu8.jpg" alt="Nagi-BotV1" style="width: 75%; height: auto; max-width: 100px;">
 </p>
 
 <p align="center">
-  <a href="https://wa.me/5491156178758">
-    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" width="30" alt="WhatsApp">
-  </a> |
-  <a href="mailto:devfedexyz@gmail.com">
-    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="30" alt="Email">
-  </a> |
-  <a href="https://instagram.com/devfedexyz">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="30" alt="Instagram">
+  <a href="https://wa.me/5491156178758" title="WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" width="34" alt="WhatsApp">
+  </a> &nbsp;|&nbsp;
+  <a href="mailto:fedelanyt20@gmail.com" title="Correo">
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" width="34" alt="Email">
+  </a> &nbsp;|&nbsp;
+  <a href="https://instagram.com/Dev-fedexyz13" title="Instagram">
+    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670274.png" width="34" alt="Instagram">
   </a>
 </p>
 
