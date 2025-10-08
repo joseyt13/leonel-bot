@@ -1,5 +1,5 @@
 let handler = async (m, { conn}) => {
-  const botname = '© ＮＡＧＩＢＯＴ－Ｖ¹'
+  const botname = '© NᴀɢɪBᴏᴛV𝟷'
   const textbot = 'ꕥ ʟɪꜱᴛᴀ ᴅᴇ ᴄᴏᴍᴀɴᴅᴏꜱ ᴅɪꜱᴘᴏɴɪʙʟᴇꜱ'
   const redes = 'https://github.com/hashirama-dev'
   const banner = 'https://cdn.yupra.my.id/yp/dpi4ktu8.jpg'
@@ -12,7 +12,7 @@ let handler = async (m, { conn}) => {
   const creadorNombre = '@' + global.owner?.[0]?.[0]
 
   const txt = `︶•︶°︶•︶°︶•︶°︶•︶°︶•︶°︶
-> ʜᴏʟᴀ, @${m.sender.split('@')[0]}, ꜱᴏʏ ɴᴀɢɪ-ʙᴏᴛ, ʟɪꜱᴛᴏ ᴘᴀʀᴀ ᴀʏᴜᴅᴀʀᴛᴇ
+> ❀ ʜᴏʟᴀ, @${m.sender.split('@')[0]}, ꜱᴏʏ ɴᴀɢɪ-ʙᴏᴛ, ʟɪꜱᴛᴏ ᴘᴀʀᴀ ᴀʏᴜᴅᴀʀᴛᴇ
 ╭┈ ↷
 │ ✐ *𝓓𝓮𝔀𝓮𝓵𝓸𝓹𝓮𝓭 𝓫𝔂* ${creadorNombre} ❤️
 │ ✐ ꒷ꕤ💎ദ *ɢʀᴜᴘᴏ ᴏꜰɪᴄɪᴀʟ* ꕥ
