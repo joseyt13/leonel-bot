@@ -1,16 +1,11 @@
-import fs from 'fs'
-import path from 'path'
-import fetch from 'node-fetch'
-
 let handler = async (m, { conn}) => {
   const botname = '© ＮＡＧＩＢＯＴ－Ｖ¹'
   const textbot = 'ꕥ ʟɪꜱᴛᴀ ᴅᴇ ᴄᴏᴍᴀɴᴅᴏꜱ ᴅɪꜱᴘᴏɴɪʙʟᴇꜱ'
   const redes = 'https://github.com/hashirama-dev'
-  const defaultBanner = 'https://cdn.yupra.my.id/yp/dpi4ktu8.jpg'
-  const bannerPath = path.join(process.cwd(), './media/banner.jpg')
+  const banner = 'https://cdn.yupra.my.id/yp/dpi4ktu8.jpg'
   const channelRD = {
     id: '120363423335018677@newsletter',
-    name: 'ＮＡＧＩＢＯＴ－Ｖ¹'
+    name: '𝑵𝒂𝒈𝒊-𝑩𝒐𝒕𝑽𝟏'
 }
 
   const creadorJid = global.owner?.[0]?.[0] + '@s.whatsapp.net'
@@ -248,10 +243,6 @@ let handler = async (m, { conn}) => {
 
 > ✐ ꒷ꕤ💎ദ ᴘʀᴇᴍɪᴜᴍ ᴇxᴘᴇʀɪᴇɴᴄᴇ ʙʏ ɴᴀɢɪ-ʙᴏᴛ`.trim()
 
-  const bannerBuffer = fs.existsSync(bannerPath)
-? fs.readFileSync(bannerPath)
-: await (await fetch(defaultBanner)).buffer()
-
   await conn.sendMessage(m.chat, {
     text: txt,
     mentions: [m.sender, creadorJid],
@@ -269,7 +260,7 @@ let handler = async (m, { conn}) => {
         mediaType: 1,
         mediaUrl: redes,
         sourceUrl: redes,
-        thumbnail: bannerBuffer,
+        thumbnail: await (await fetch(banner)).buffer(),
         showAdAttribution: false,
         containsAutoReply: true,
         renderLargerThumbnail: true
