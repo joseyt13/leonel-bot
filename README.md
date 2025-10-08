@@ -5,18 +5,6 @@
   <img src="https://cdn.yupra.my.id/yp/dpi4ktu8.jpg" alt="Nagi-BotV1" style="width: 75%; height: auto; max-width: 100px;">
 </p>
 
-<p align="center">
-  <a href="https://wa.me/5491156178758" title="WhatsApp">
-    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" width="34" alt="WhatsApp">
-  </a> &nbsp;|&nbsp;
-  <a href="mailto:fedelanyt20@gmail.com" title="Correo">
-    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" width="34" alt="Email">
-  </a> &nbsp;|&nbsp;
-  <a href="https://instagram.com/Dev-fedexyz13" title="Instagram">
-    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670274.png" width="34" alt="Instagram">
-  </a>
-</p>
-
 ---
 
 <p align="center">
@@ -24,8 +12,6 @@
 </p>
 
 ---
-
-<div align="center">
 
 *𝑴𝒐𝒐𝒏𝒇𝒓𝒂𝒓𝒆 𝑻𝒆𝒂𝒎*
 
