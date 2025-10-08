@@ -11,7 +11,7 @@ let handler = async (m, { conn, args}) => {
   if (!global.packsticker) global.packsticker = 'ＮＡＧＩＢＯＴ－Ｖ¹'
   if (!global.packsticker2) global.packsticker2 = '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ'
 
-  let texto1 = 'dev'
+  let texto1 = '⚽'
   let texto2 = packstickers.text2 || global.packsticker2
 
   try {
@@ -23,14 +23,34 @@ let handler = async (m, { conn, args}) => {
       if (/video/.test(mime) && (q.msg || q).seconds> 16)
         return conn.reply(m.chat, '✧ El video no puede durar más de *15 segundos*', m)
 
-      await conn.reply(m.chat, '❀ *_Creando su sticker, espere..._*', m)
+      await conn.sendMessage(m.chat, {
+        text: '❀ *_Creando su sticker, espere..._*',
+        contextInfo: {
+          externalAdReply: {
+            title: 'ＮＡＧＩＢＯＴ－Ｖ¹',
+            body: '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ',
+            mediaType: 1,
+            renderLargerThumbnail: true
+}
+}
+})
 
       let buffer = await q.download()
       let marca = txt? txt.split(/[\u2022|]/).map(part => part.trim()): [texto1, texto2]
       stiker = await sticker(buffer, false, marca[0], marca[1])
 
 } else if (args[0] && isUrl(args[0])) {
-      await conn.reply(m.chat, '❀ *_Creando su sticker, espere..._*', m)
+      await conn.sendMessage(m.chat, {
+        text: '❀ *_Creando su sticker, espere..._*',
+        contextInfo: {
+          externalAdReply: {
+            title: 'ＮＡＧＩＢＯＴ－Ｖ¹',
+            body: '© Pᴏᴡᴇʀᴇᴅ Bʏ Dᴇᴠ-ꜰᴇᴅᴇxʏᴢ',
+            mediaType: 1,
+            renderLargerThumbnail: true
+}
+}
+})
 
       let buffer = await sticker(false, args[0], texto1, texto2)
       stiker = buffer
