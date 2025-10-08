@@ -7,13 +7,13 @@
 
 <p align="center">
   <a href="https://wa.me/5491156178758">
-    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" width="30" alt="WhatsApp"> WhatsApp
+    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" width="30" alt="WhatsApp">
   </a> |
   <a href="mailto:devfedexyz@gmail.com">
-    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="30" alt="Email"> Correo
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="30" alt="Email">
   </a> |
   <a href="https://instagram.com/devfedexyz">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="30" alt="Instagram"> Instagram
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="30" alt="Instagram">
   </a>
 </p>
 
