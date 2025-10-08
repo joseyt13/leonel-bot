@@ -1,4 +1,4 @@
-> [!IMPORTANT!]
+> [!IMPORTANT]
 > _Este bot se encuentra actualmente en desarrollo. Únete a nuestro canal para recibir novedades y actualizaciones. [¡Canal Oficial!](https)_
 
 <p align="center">
