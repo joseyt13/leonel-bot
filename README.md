@@ -36,8 +36,8 @@ Este bot es un *desarrollo independiente* sin relación oficial con la compañí
 *👑 Propietario*
 
 <p align="center">
-  <a href="https://github.com/Dev-fedexyz17">
-    <img src="https://github.com/Dev-fedexyz17.png" width="130" height="130" alt="Dev-fedexyz">
+  <a href="https://github.com/Dev-fedexyz13">
+    <img src="https://github.com/Dev-fedexyz13.png" width="130" height="130" alt="Dev-fedexyz">
   </a>
 </p>
 
