@@ -29,6 +29,7 @@ Este proyecto *no está afiliado de ninguna manera* con `WhatsApp Inc.`
 Este bot es un *desarrollo independiente* sin relación oficial con la compañía.
 
 **📩 Contacto**
+
 [![Email](https://img.shields.io/badge/Gmail-Enviar%20Mensaje-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:Fedelanyt20@gmail.com)
 
 
