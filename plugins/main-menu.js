@@ -16,7 +16,7 @@ let handler = async (m, { conn}) => {
 ╭┈ ↷
 │ ✐ *𝓓𝓮𝔀𝓮𝓵𝓸𝓹𝓮𝓭 𝓫𝔂* ${creadorNombre} ❤️
 │ ✐ ꒷ꕤ💎ദ *ɢʀᴜᴘᴏ ᴏꜰɪᴄɪᴀʟ* ꕥ
-│ chat.whatsapp.com/F1A3vMyQLnh0LAnJvpdjng
+│ https://nagi-web-xyz.vercel.app/
 │ ✐ ꒷ꕤ💎ദ *ᴄᴀɴᴀʟ ᴏғɪᴄɪᴀʟ* ෴
 │ whatsapp.com/channel/0029VbApe6jG8l5Nv43dsC2N
 ╰─────────────────
