@@ -269,16 +269,22 @@ let handler = async (m, { conn}) => {
 }, { quoted: m})
 }
 
-handler.help = ['menu']
-handler.tags = ['main']
-handler.command = ['menu', 'menú', 'help']
+const keywords = ['menu', 'menú', 'help'];
+
+handler.help = ['menu'];
+handler.tags = ['main'];
+handler.command = ['menu', 'menú', 'help'];
 
 handler.all = async function (m) {
-  if (!m.text) return
-  let txt = m.text.trim().toLowerCase()
-  if (['menu', 'menú', 'help'].includes(txt)) {
-    return handler(m, { conn: this, args: [] })
-  }
+  if (!m.text) return;
+
+  const input = m.text.trim().toLowerCase();
+
+  for (const keyword of keywords) {
+    if (input === keyword) {
+      return handler(m, { conn: this, args: []});
 }
+}
+};
 
 export default handler;
