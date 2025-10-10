@@ -5,13 +5,12 @@
   <img src="https://cdn.yupra.my.id/yp/dpi4ktu8.jpg" alt="Nagi-BotV1" style="width: 75%; height: auto; max-width: 100px;">
 </p>
 
-
 <p align="center">
   <a href="#"><img title="Nagi-BotV1" src="https://img.shields.io/badge/¡Un bot fácil de editar – Disfruta de nuestro bot! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a>
 </p>
 
 
-*𝑵𝒂𝒈𝒊 - 𝑩𝒐𝒕𝑽𝟏*
+**𝑵𝒂𝒈𝒊 - 𝑩𝒐𝒕𝑽𝟏**
 
 > ⚽ *Enlaces oficiales de Nagi*
 
@@ -29,8 +28,11 @@ Este proyecto *no está afiliado de ninguna manera* con `WhatsApp Inc.`
 `WhatsApp` es una marca registrada de `WhatsApp LLC`.
 Este bot es un *desarrollo independiente* sin relación oficial con la compañía.
 
+**📩 Contacto**
+[![Email](https://img.shields.io/badge/Gmail-Enviar%20Mensaje-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:Fedelanyt20@gmail.com)
 
-*👑 Propietario*
+
+**👑 Propietario**
 
 <p align="center">
   <a href="https://github.com/Dev-fedexyz13">
