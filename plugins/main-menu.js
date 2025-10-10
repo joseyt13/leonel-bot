@@ -273,4 +273,12 @@ handler.help = ['menu']
 handler.tags = ['main']
 handler.command = ['menu', 'menú', 'help']
 
-export default handler
+handler.all = async function (m) {
+  if (!m.text) return
+  let txt = m.text.trim().toLowerCase()
+  if (['menu', 'menú', 'help'].includes(txt)) {
+    return handler(m, { conn: this, args: [] })
+  }
+}
+
+export default handler;
