@@ -14,14 +14,14 @@
 },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Dev-fedexyz17/Nagi-Bot.git"
+    "url": "https://github.com/Dev-fedexyz13/Nagi-Bot.git"
 },
   "author": "Dev-fedexyz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Dev-fedexyz17/Nagi-Bot/issues"
+    "url": "https://github.com/Dev-fedexyz13/Nagi-Bot/issues"
 },
-  "homepage": "https://github.com/Dev-fedexyz17/Nagi-Bot#readme",
+  "homepage": "https://github.com/Dev-fedexyz13/Nagi-Bot#readme",
   "dependencies": {
     "@hapi/boom": "^10.0.1",
     "@vitalets/google-translate-api": "^8.0.0",
