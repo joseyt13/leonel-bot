@@ -59,7 +59,7 @@ if (!fs.existsSync(pathNagiJadiBot)){
 fs.mkdirSync(pathNagiJadiBot, { recursive: true })
 }
 nagiJBOptions.pathNagiJadiBot = pathNagiJadiBot
-nqgiJBOptions.m = m
+nagiJBOptions.m = m
 nagiJBOptions.conn = conn
 nagiJBOptions.args = args
 nagiJBOptions.usedPrefix = usedPrefix
