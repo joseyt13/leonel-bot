@@ -61,7 +61,7 @@ const handler = async (m, { conn}) => {
 const keywords = ['tourl'];
 
 handler.help = ['tourl'];
-handler.tags = ['main'];
+handler.tags = ['tools'];
 handler.command = ['tourl'];
 
 handler.all = async function (m) {
