@@ -25,11 +25,25 @@ var handler = async (m, { conn, participants, usedPrefix, command}) => {
 }
 }
 
-handler.help = ['kick']
-handler.tags = ['grupo']
-handler.command = ['kick', 'ban']
+const keywords = ['kick', 'ban'];
+
+handler.help = ['menu'];
+handler.tags = ['main'];
+handler.command = ['kick', 'ban'];
 handler.admin = true
 handler.group = true
 handler.botAdmin = true
 
-export default handler
+handler.all = async function (m) {
+  if (!m.text) return;
+
+  const input = m.text.trim().toLowerCase();
+
+  for (const keyword of keywords) {
+    if (input === keyword) {
+      return handler(m, { conn: this, args: []});
+}
+}
+};
+
+export default handler;
