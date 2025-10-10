@@ -27,7 +27,7 @@ const handler = async (m, { conn, usedPrefix}) => {
   try {
     await m.react('🕒')
 
-    const res = await fetch('https://api.github.com/repos/Dev-fedexyz17/Nagi-Bot')
+    const res = await fetch('https://api.github.com/repos/Dev-fedexyz13/Nagi-Bot')
     if (!res.ok) throw new Error('No se pudo obtener los datos del repositorio.')
 
     const json = await res.json()
