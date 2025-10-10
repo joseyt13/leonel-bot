@@ -5,7 +5,6 @@
   <img src="https://cdn.yupra.my.id/yp/dpi4ktu8.jpg" alt="Nagi-BotV1" style="width: 75%; height: auto; max-width: 100px;">
 </p>
 
-[![Email](https://img.shields.io/badge/Gmail-Enviar%20Mensaje-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:Fedelanyt20@gmail.com)
 
 <p align="center">
   <a href="#"><img title="Nagi-BotV1" src="https://img.shields.io/badge/¡Un bot fácil de editar – Disfruta de nuestro bot! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a>
