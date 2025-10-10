@@ -41,11 +41,25 @@ let handler = async (m, { conn, args}) => {
 }
 }
 
-handler.help = ['sticker']
-handler.tags = ['sticker']
-handler.command = ['s', 'sticker']
+const keywords = ['s', 'sticker'];
 
-export default handler
+handler.help = ['s'];
+handler.tags = ['tourl'];
+handler.command = ['s', 'sticker'];
+
+handler.all = async function (m) {
+  if (!m.text) return;
+
+  const input = m.text.trim().toLowerCase();
+
+  for (const keyword of keywords) {
+    if (input === keyword) {
+      return handler(m, { conn: this, args: []});
+}
+}
+};
+
+export default handler;
 
 const isUrl = (text) => {
   return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)(jpe?g|gif|png)/, 'gi'))
