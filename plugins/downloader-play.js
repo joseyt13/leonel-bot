@@ -111,9 +111,25 @@ const handler = async (m, { conn, text, command}) => {
 }
 }
 
-handler.command = ["play", "play2", "yta", "ytv"]
-handler.help = ['play', 'yta', 'ytmp3', 'play2', 'ytv', 'ytmp4', 'playaudio', 'mp4']
-handler.tags = ["downloader"]
+const keywords = ['play', 'ytmp3', 'play2', 'ytmp4', 'playaudio', 'mp4'];
+
+handler.help = ['play'];
+handler.tags = ['downloader'];
+handler.command = ['play', 'ytmp3', 'play2', 'ytmp4', 'playaudio', 'mp4'];
+
+handler.all = async function (m) {
+  if (!m.text) return;
+
+  const input = m.text.trim().toLowerCase();
+
+  for (const keyword of keywords) {
+    if (input === keyword) {
+      return handler(m, { conn: this, args: []});
+}
+}
+};
+
+export default handler;
 
 export default handler
 
