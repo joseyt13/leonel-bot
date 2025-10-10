@@ -58,8 +58,22 @@ const handler = async (m, { conn}) => {
 }
 }
 
-handler.help = ['tourl']
-handler.tags = ['tools']
-handler.command = ['tourl']
+const keywords = ['tourl'];
 
-export default handler
+handler.help = ['tourl'];
+handler.tags = ['main'];
+handler.command = ['tourl'];
+
+handler.all = async function (m) {
+  if (!m.text) return;
+
+  const input = m.text.trim().toLowerCase();
+
+  for (const keyword of keywords) {
+    if (input === keyword) {
+      return handler(m, { conn: this, args: []});
+}
+}
+};
+
+export default handler;
