@@ -12,8 +12,8 @@ const handler = async (event, { conn}) => {
     const number = user.split('@')[0];
     const tipo = action === 'add'? 'Bienvenido/a 🎉': 'Despedida 👋';
     const who = user;
-    const file = 'https://cdn.yupra.my.id/yp/962jca9m.jpg'; // Reemplaza con la URL real de tu imagen
-
+    const file = 'https://cdn.yupra.my.id/yp/962jca9m.jpg';
+    
     const productMessage = {
       product: {
         productImage: { url: file},
@@ -35,7 +35,7 @@ const handler = async (event, { conn}) => {
         {
           name: 'quick_reply',
           buttonParamsJson: JSON.stringify({
-            display_text: 'Menú Nakano 🌷',
+            display_text: 'Menú ⚽',
             id: 'menu'
 })
 }
