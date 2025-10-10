@@ -15,8 +15,8 @@ let handler = async (m, { conn}) => {
 > ❀ ʜᴏʟᴀ, @${m.sender.split('@')[0]}, ꜱᴏʏ ɴᴀɢɪ-ʙᴏᴛ, ʟɪꜱᴛᴏ ᴘᴀʀᴀ ᴀʏᴜᴅᴀʀᴛᴇ
 ╭┈ ↷
 │ ✐ *𝓓𝓮𝔀𝓮𝓵𝓸𝓹𝓮𝓭 𝓫𝔂* ${creadorNombre} ❤️
-│ ✐ ꒷ꕤ💎ദ *ɢʀᴜᴘᴏ ᴏꜰɪᴄɪᴀʟ* ꕥ
-│ https://nagi-web-xyz.vercel.app/
+│ ✐ ꒷ꕤ💎ദ *ᴡᴇʙ ᴏꜰɪᴄɪᴀʟ* ꕥ
+│ https://nagi-web-xyz.vercel.app
 │ ✐ ꒷ꕤ💎ദ *ᴄᴀɴᴀʟ ᴏғɪᴄɪᴀʟ* ෴
 │ whatsapp.com/channel/0029VbApe6jG8l5Nv43dsC2N
 ╰─────────────────
