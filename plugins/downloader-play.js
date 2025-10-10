@@ -131,8 +131,6 @@ handler.all = async function (m) {
 
 export default handler;
 
-export default handler
-
 function formatViews(views) {
   if (!views) return "No disponible"
   if (views>= 1_000_000_000) return `${(views / 1_000_000_000).toFixed(1)}B`
