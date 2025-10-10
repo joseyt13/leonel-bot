@@ -12,7 +12,7 @@ const handler = async (event, { conn}) => {
     const number = user.split('@')[0];
     const tipo = action === 'add'? 'Bienvenido/a 🎉': 'Despedida 👋';
     const who = user;
-    const file = 'https://example.com/imagen.jpg'; // Reemplaza con la URL real de tu imagen
+    const file = 'https://cdn.yupra.my.id/yp/962jca9m.jpg'; // Reemplaza con la URL real de tu imagen
 
     const productMessage = {
       product: {
